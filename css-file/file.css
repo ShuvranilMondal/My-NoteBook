@@ -10,6 +10,8 @@ html{
     background: rgb(245, 245, 245);
 }
 
+
+
 /* ///////////// utility clsaa ///////////// */
 
 .container{
@@ -99,13 +101,26 @@ html{
 }
 
 /* ////////////////////////////// */
-
-.msg-container{
+#mom{
     padding-top: 20px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
+
+/* .msg-container{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+} */
 
 
 .msg-container .box{
