@@ -109,18 +109,11 @@ html{
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    padding-bottom: 50px;
 }
 
 
-/* .msg-container{
-    padding-top: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-} */
+
 
 
 .msg-container .box{
@@ -133,6 +126,10 @@ html{
 }
 
 .msg-container .box .txtarea{
+    position: relative;
+    display: block;
+    top: 0%;
+    left: 0%;
     height: 100%;
     width: 100%;
     outline: none;
@@ -146,6 +143,23 @@ html{
     font-weight: 500;
 }
 
+.box .main{
+    position: absolute;
+    display: block;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    font-size: 2rem;
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Caveat', cursive;
+    font-weight: 500;
+}
 
 .txt-btn{
     height: 35px;
@@ -190,3 +204,14 @@ html{
     transform: translate(-10px,-15px);
 }
 
+.msg-container .box .hide{
+    display: none;
+}
+
+@media (max-width:600px){
+    .msg-container .box{
+        height: 200px;
+        width: 300px;
+
+    }
+}

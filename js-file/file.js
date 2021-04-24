@@ -8,7 +8,8 @@ let addNewNote =(text = '')=>{
 
     let htmldata = `
     <div class="box">
-        <textarea class="txtarea"></textarea>
+        <div class="main ${text ? "" : "" }"></div>
+        <textarea class="txtarea ${text ? "hide" : ""}"></textarea>
         <div class="btn-container">
             <button class="txt-btn txt-btn1"><i class="far fa-save"></i></button>
             <button class="txt-btn txt-btn2"><i class="far fa-trash-alt"></i></button>
@@ -16,7 +17,30 @@ let addNewNote =(text = '')=>{
     </div> `
 
     note.insertAdjacentHTML('afterbegin',htmldata)
+
+
+    let del = note.querySelector('.txt-btn2')
+    let sav = note.querySelector('.txt-btn1')
+    let main = note.querySelector('.main')
+    let texarea = note.querySelector('textarea')
+
+    del.addEventListener('click',()=>{
+        note.remove()
+    })
+
+    sav.addEventListener('click',()=>{
+        // main.classList.toggle('hide')
+        texarea.classList.toggle('hide')
+    })
+
+    texarea.addEventListener('change',(ele)=>{
+        let mytxtVar = ele.target.value
+        main.innerHTML = mytxtVar
+    })
+
+
     mom.appendChild(note)
+    // document.body.appendChild(note)
     
     
     
@@ -26,4 +50,6 @@ let addNewNote =(text = '')=>{
 
 
 
-addNew.addEventListener('click',addNewNote)
+addNew.addEventListener('click',function(){
+    addNewNote()
+})
