@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -111,9 +112,9 @@ html{
     position: relative;
     width: 350px;
     height: 200px;
-    border: 2px solid gray;
     background: white;
     margin: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .msg-container .box .txtarea{
@@ -124,20 +125,42 @@ html{
     border: none;
     font-size: 2rem;
     padding-top: 50px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Caveat', cursive;
+    font-weight: 500;
 }
 
 
 .txt-btn{
     height: 35px;
     width: 35px;
-    background: red;
     border-radius: 50%;
     border: none;
     box-shadow: none;
     margin-left: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
+
+.txt-btn1{
+    background: blue;
+}
+
+.txt-btn2{
+    background: red;
+}
+
+
+.txt-btn1:hover{
+    background: rgb(0, 0, 155);
+}
+
+.txt-btn2:hover{
+    background: rgb(167, 0, 0);
+}
+
+
 
 
 .txt-btn i{
