@@ -1,6 +1,20 @@
 let addNew = document.querySelector('#add-new')
 let mom = document.querySelector('#mom')
 
+let localSD =()=>{
+    let txtdata = document.querySelectorAll('textarea');
+    let notes = []
+    txtdata.forEach((note)=>{
+        return  notes.push(note.value);
+    })
+
+    localStorage.setItem('notes', JSON.stringify(notes))
+    
+}
+
+
+
+
 
 let addNewNote =(text = '')=>{
     let note = document.createElement('section')
@@ -26,7 +40,11 @@ let addNewNote =(text = '')=>{
 
     del.addEventListener('click',()=>{
         note.remove()
+        localSD()
     })
+
+    texarea.value = text
+    main.innerHTML = text
 
     sav.addEventListener('click',()=>{
         // main.classList.toggle('hide')
@@ -36,8 +54,11 @@ let addNewNote =(text = '')=>{
     texarea.addEventListener('change',(ele)=>{
         let mytxtVar = ele.target.value
         main.innerHTML = mytxtVar
+
+        localSD()
     })
 
+    
 
     mom.appendChild(note)
     // document.body.appendChild(note)
@@ -47,6 +68,13 @@ let addNewNote =(text = '')=>{
 
 }
 
+
+let notes = JSON.parse(localStorage.getItem('notes'))
+if(notes){
+    notes.forEach((notevalue)=>{
+        addNewNote(notevalue)
+    })
+}
 
 
 
