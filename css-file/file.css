@@ -179,6 +179,8 @@ html{
 
 .txt-btn1{
     background: blue;
+    outline: none;
+    border: none;
 }
 
 .txt-btn2{
